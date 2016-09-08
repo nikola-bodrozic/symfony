@@ -8,14 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class SretniController extends Controller
 {
     /**
-     *
-     * @Route("/sretni/broj/{slug}", requirements={"slug": "\d+"})
+     * @Route("/sretni/{month}/{year}")
+     * 
      */
-    public function brojAction($slug)
+    public function brojAction($month, $year)
     {
         return $this->render( 
             'sretni/broj.html.twig', 
-            array('number' => $slug)
+            array('number' => array($month, $year))
         );
     }
 }
