@@ -9,7 +9,7 @@ class SretniController extends Controller
 {
     /**
      *
-     * @Route("/sretni/broj/{slug}")
+     * @Route("/sretni/broj/{slug}", requirements={"slug": "\d+"})
      */
     public function brojAction($slug)
     {
