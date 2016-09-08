@@ -8,14 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class SretniController extends Controller
 {
     /**
-     * @Route("/sretni/{month}/{year}")
+     * @Route("/sretni/{_lang}/{month}/{year}", requirements={"_lang": "en|fr"})
      * 
      */
-    public function brojAction($month, $year)
+    public function brojAction($lang, $month, $year)
     {
         return $this->render( 
             'sretni/broj.html.twig', 
-            array('number' => array($month, $year))
+            array('number' => array($_lang, $month, $year))
         );
     }
 }
