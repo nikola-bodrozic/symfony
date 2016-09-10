@@ -2,12 +2,21 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class SretniController extends Controller
 {
+    /**
+    * @Route("sretni/odgovor")
+    */
+    public function odgovorAction(){
+        $response = new Response(json_encode(array('name' => 'mike')));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+
     /**
      * @Route("sretni")
      * @Route("sretni/index")
