@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class SretniController extends Controller
 {
@@ -11,8 +12,13 @@ class SretniController extends Controller
      * @Route("sretni")
      * @Route("sretni/index")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $session = $request->getSession();
+        $session->set('param-name', 'param vrednost');
+
+        return $this->render('sretni/ind.html.twig');
+
         // redirect to the "homepage" route
         // return $this->redirectToRoute('homepage');
 
@@ -25,9 +31,7 @@ class SretniController extends Controller
         // redirect externally
         // return $this->redirect('http://symfony.com/doc');
 
-        return new Response(
-            '<html><body>Placeholder</body></html>'
-        );
+
     }
 
     /**
@@ -39,11 +43,12 @@ class SretniController extends Controller
      *     }
      * )
      */
-    public function brojAction($_locale, $year, $title)
+    public function brojAction($_locale, $year, $title, Request $request)
     {
+        $session = $request->getSession();
         return $this->render( 
             'sretni/broj.html.twig', 
-            array('number' => array($_locale, $year, $title))
+            array('number' => array($_locale, $year, $title, $session->get('param-name')))
         );
     }
 }
