@@ -1,0 +1,1 @@
+alert('js fajl za sretni/index ucitan');

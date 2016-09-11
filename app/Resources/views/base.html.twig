@@ -1,13 +1,19 @@
+{# app/Resources/views/base.html.twig #}
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="UTF-8">
+        <title>Naslov</title>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+            <h1>{% block header %}naslov sajta{% endblock %}</h1>
+            {% block sidebar %}sidebar default{% endblock %}
+            {% block body %}bbbbodi{% endblock %}
+        </div>
+
+        {# js fajlovi su u web/js #}
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

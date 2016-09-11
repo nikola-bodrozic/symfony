@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+ 	{{ parent() }} 	- naslov strane
+{% endblock %}
+
+{% block body %}
+        <p>bodiiiiiiii iy templejta</p>
+{% endblock %}
+
+        {% block javascripts %}
+        	{{ parent() }}
+            <script src="{{ asset('js/sretni-javascript.js') }}"></script>
+        {% endblock %}
