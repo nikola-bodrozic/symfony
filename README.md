@@ -1,4 +1,4 @@
-my_project_name
-===============
+Symfony
+=======
 
-A Symfony project created on September 1, 2016, 7:45 pm.
+A Symfony project with twitter bootstrap
