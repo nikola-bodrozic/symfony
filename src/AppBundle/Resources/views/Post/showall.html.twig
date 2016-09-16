@@ -1,0 +1,9 @@
+{% extends "::osnovni.html.twig" %}
+
+{% block title %}<h1>show all</h1>{% endblock %}
+
+{% block body %}
+    {% for post in postovi %}
+    <p>{{ post.author }}</p>
+    {% endfor %}
+{% endblock %}
