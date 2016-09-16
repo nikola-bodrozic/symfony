@@ -4,6 +4,6 @@
 
 {% block body %}
     {% for post in postovi %}
-    <p>{{ post.author }}</p>
+    <p>{{ post.author }} {{ post.title }} </p>
     {% endfor %}
 {% endblock %}
