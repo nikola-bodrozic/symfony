@@ -2,8 +2,18 @@
 
 {% block title %}<h1>show all</h1>{% endblock %}
 
+
+
 {% block body %}
+
+	{% for flash_message in app.session.flashbag.get('notice') %}
+	<div style="border:dotted;padding:5px">
+	    <strong>{{ flash_message }}</strong>
+	</div>
+	{% endfor %}
+
     {% for post in postovi %}
-    <p>{{ post.author }} {{ post.title }} </p>
+    <p>Autor:{{ post.author }} Naslov:{{ post.title }} </p>
     {% endfor %}
+    
 {% endblock %}

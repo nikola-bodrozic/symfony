@@ -65,7 +65,7 @@ class PostController extends Controller
 
             $em->flush();
 
-            $this->addFlash('notice', 'izmenio red u bayu');
+            $this->addFlash('notice', 'izmenio red u bazi');
             return $this->redirectToRoute("show_all");
         }
         return $this->render(
@@ -104,7 +104,7 @@ class PostController extends Controller
             $em->persist($blogPost);
             $em->flush();
 
-            $this->addFlash('notice', 'dodao red u bayu');
+            $this->addFlash('notice', 'dodao red u bazu');
             return $this->redirectToRoute("show_all");
         }
 
@@ -139,7 +139,7 @@ class PostController extends Controller
         $em->remove($jedanRed);
         $em->flush();
 
-        $this->addFlash('notice', 'obrisao red iy bayu');
+        $this->addFlash('notice', 'obrisao red iz baze');
         return $this->redirectToRoute("show_all");
 
     }
