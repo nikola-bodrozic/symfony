@@ -3,3 +3,10 @@ app:
     type:     annotation
 app_user:
     resource: "@AppBundle/Resources/config/routing.yml"
+login:
+    path: /login
+    defaults: { _controller: AppBundle:Security:login }
+login_check:
+    path: /login_check
+logout:
+    pattern: /logout
