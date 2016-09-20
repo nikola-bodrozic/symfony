@@ -33,6 +33,7 @@ security:
         - { path: ^/post/edit/, roles: ROLE_USER }
         - { path: ^/post/create/, roles: ROLE_USER }
         - { path: ^/post/delete/, roles: ROLE_USER }
+        - { path: ^/post/editposts, roles: ROLE_USER }        
         - { path: ^/post/showpost, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/post/showall, roles: IS_AUTHENTICATED_ANONYMOUSLY }        
         - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }

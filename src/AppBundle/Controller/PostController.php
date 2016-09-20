@@ -15,6 +15,21 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 class PostController extends Controller
 {
     /**
+     * @Route("post/editposts", name="edit_posts")
+     */
+    public function editpostsAction()
+    {
+        $postovi = $this->getDoctrine()
+                        ->getRepository("AppBundle:Blogpost")
+                        ->findAll();
+
+        return $this->render(
+            'AppBundle:Post:editposts.html.twig',
+            array('postovi' => $postovi)
+        );
+    }
+
+    /**
      * @Route("post/showall", name="show_all")
      */
     public function showallAction()

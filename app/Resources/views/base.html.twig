@@ -10,9 +10,10 @@
                 <p id="logo">Custom CMS</p>
                 <div id="nav">
                     <a href="{{ path('homepage') }}">Home</a>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+| <span>Hello {{ app.user.username }}</span>
+{% endif %}
 
-{% if is_granted('ROLE_USER') %} | Hello user{% endif %}
-{% if is_granted('ROLE_ADMIN') %} | Hello admin{% endif %}
 {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
     | <a href="{{ path('logout') }}">Logout</a>
 {% else %}
