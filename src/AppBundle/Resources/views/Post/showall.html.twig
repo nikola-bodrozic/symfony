@@ -1,4 +1,4 @@
-{% extends "::base.html.twig" %}
+{% extends "::osnovni.html.twig" %}
 
 {% block title %}<h1>show all</h1>{% endblock %}
 
@@ -13,7 +13,12 @@
 	{% endfor %}
 
     {% for post in postovi %}
-    <p>Autor:{{ post.author }} Naslov:{{ post.title }} Link:<a href="/post/showpost/{{ post.id }}">View</a> </p>
+    <p>
+		Autor:{{ post.author }} Naslov:{{ post.title }} Link:<a href="/post/showpost/{{ post.id }}">View</a>
+		{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %} <a href="/post/edit/{{ post.id }}">Edit</a>{% endif %}
+		{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %} <a href="/post/delete/{{ post.id }}">Delete</a>{% endif %}
+	</p>
     {% endfor %}
-    
+
+	{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %} <a href="/post/create">Create new post</a>{% endif %}
 {% endblock %}
