@@ -1,1 +1,1 @@
-alert('jQuery ucitan');
+console.log('jQuery ucitan');

@@ -1,1 +1,1 @@
-alert('js fajl za sretni/index ucitan');
+conslole.log('js fajl za sretni/index ucitan');

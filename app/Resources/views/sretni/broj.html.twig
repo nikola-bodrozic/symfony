@@ -1,4 +1,15 @@
-array number
-<pre>
-    {{ dump(number) }}
-</pre>
+{% extends "base.html.twig" %}
+
+{% block header %}
+ 	{{ parent() }} 	- naslov strane
+{% endblock %}
+
+{% block body %}
+        <p>sretni broj</p>
+        {{ dump(number) }}
+{% endblock %}
+
+        {% block javascripts %}
+        	{{ parent() }}
+            <script src="{{ asset('js/sretni-javascript.js') }}"></script>
+        {% endblock %}
